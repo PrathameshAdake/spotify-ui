@@ -1,38 +1,46 @@
-.App {
+:root {
+  --main-radius: 5px;
+  --main-padding: 5px;
+}
+
+.container {
+  background-color: rgb(37, 37, 37);
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 0.6fr 1.8fr 0.6fr;
+  grid-template-rows: 0.3fr 2.25fr 0.45fr;
+  grid-template-areas:
+    "lists main_content friends"
+    "lists main_content friends"
+    "player player player";
+
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.lists {
+  /* background-color: white; */
+  background-color: rgb(10, 10, 10);
+  grid-area: lists;
+  padding: var(--main-padding);
+  padding-left: 3px;
+  padding-right: 3px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.main_content {
+  background-color: rgb(34, 30, 30);
+  grid-area: main_content;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.friends {
+  background-color: rgb(10, 10, 10);
+  grid-area: friends;
+  padding-top: var(--main-padding);
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.player {
+  background-color: #141516;
+  grid-area: player;
 }
